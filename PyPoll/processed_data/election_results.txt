@@ -1,0 +1,21 @@
+Election Results====================================================
+Marsh County --------------
+Khan: 1427142 	Correy: 453015 	Li: 317651 	O'Tooley: 68149 	
+Khan: 63%   	Correy: 20%   	Li: 14%   	O'Tooley: 3%   	
+Queen County --------------
+Khan: 439494 	Correy: 139554 	Li: 97305 	O'Tooley: 20850 	
+Khan: 63%   	Correy: 20%   	Li: 14%   	O'Tooley: 3%   	
+Bamoo County --------------
+Khan: 219834 	Correy: 69752 	Li: 48639 	O'Tooley: 10433 	
+Khan: 63%   	Correy: 20%   	Li: 14%   	O'Tooley: 3%   	
+Trandee County --------------
+Khan: 65939 	Correy: 20824 	Li: 14741 	O'Tooley: 3113 	
+Khan: 63%   	Correy: 20%   	Li: 14%   	O'Tooley: 3%   	
+Raffah County --------------
+Khan: 65822 	Correy: 21055 	Li: 14604 	O'Tooley: 3085 	
+Khan: 63%   	Correy: 20%   	Li: 14%   	O'Tooley: 3%   	
+====================================================================
+Total Votes: 3521001
+Khan: 2218231 	Correy: 704200 	Li: 492940 	O'Tooley: 105630 	
+Khan: 63%    	Correy: 20%    	Li: 14%    	O'Tooley: 3%    	
+WINNER - Khan with 63% of the vote.
