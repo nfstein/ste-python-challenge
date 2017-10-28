@@ -13,7 +13,10 @@ for filename in filenames:
         csvreader = csv.DictReader(csvfile)
 
         #Emp ID,Name,DOB,SSN,State
+        #214,Sarah Simpson,1985-12-04,282-01-8166,Florida
+        #change to
         #Emp ID,First Name,Last Name,DOB,SSN,State
+        #214,Sarah,Simpson,04/04/85,***-**-8166,FL
         for row in csvreader:
             new_dict = {}
         

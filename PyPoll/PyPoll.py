@@ -12,7 +12,7 @@ out_filepath_csv = os.path.join('processed_data', out_filename_csv)
 candidates = []#'Khan', 'Correy', 'Li', "O'Tooley"]
 votes = {}#'Khan': 0, 'Correy': 0, 'Li': 0, "O'Tooley": 0}
 county_vote = {}#'Marsh': {'Khan': 0, 'Correy': 0, 'Li': 0, "O'Tooley": 0}, 'Queen':{'Khan': 0, 'Correy': 0, 'Li': 0, "O'Tooley": 0}, 'Bamoo': {'Khan': 0, 'Correy': 0, 'Li': 0, "O'Tooley": 0}, 'Trandee': {'Khan': 0, 'Correy': 0, 'Li': 0, "O'Tooley": 0}, 'Raffah': {'Khan': 0, 'Correy': 0, 'Li': 0, "O'Tooley": 0}}
-counties = []
+county_names = []
 voter_ids = []
 vote_total = 0
 winner = {}
@@ -36,7 +36,7 @@ with open(filepath, 'r') as csvfile:
         # create keys in county_vote
         if row[1] not in county_vote:
             county_vote[row[1]] = {}
-            counties.append(row[1])
+            county_names.append(row[1])
         if row[2] not in county_vote[row[1]]:
             county_vote[row[1]][row[2]] = 0
         # tally vote in county_vote
@@ -47,9 +47,6 @@ with open(filepath, 'r') as csvfile:
             print("#", end = '')
             sys.stdout.flush()
 
-        #if row[0] in voter_ids:
-        #    print(f"ERROR - VOTER FRAUD DETECTED {row}")
-        #voter_ids.append(row[0])
 print('\n')
 
 with open(out_filepath, 'w') as textfile:
@@ -89,6 +86,7 @@ with open(out_filepath, 'w') as textfile:
     textfile.write("====================================================================\n")
     print(f'Total Votes: {vote_total}')
     textfile.write(f'Total Votes: {vote_total}\n')
+
     for candidate in votes:
         print(f'{candidate}: {votes[candidate]}', end = '\t')
         textfile.write(f'{candidate}: {votes[candidate]} \t')
@@ -109,8 +107,13 @@ with open(out_filepath, 'w') as textfile:
     print(f'WINNER - {winner[0]} with {winner[1]}% of the vote.')
     textfile.write(f'WINNER - {winner[0]} with {winner[1]}% of the vote.\n')
 
-counties.append(votes)
-df = pd.DataFrame(counties)
-print(df)
+# tacked on pandas output for multiyear analysis
+county_vote['Total'] = votes
+df = pd.DataFrame(county_vote)
+
+# order dataframe by county_names then total, otherwise total ordered before trandee
+county_names.append('Total') 
+df = df[county_names]
+
 df.to_csv(out_filepath_csv, ',')
 
